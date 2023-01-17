@@ -17,9 +17,9 @@ const token=process.env.TOKEN
 const telegramBot = new TelegramBot(token, { polling: true })
 
 
-telegramBot.on('error', msg => console.log(`[bot] error:`, msg))
-telegramBot.on('polling_error', msg => console.log(`[bot] polling_error:`, msg))
-telegramBot.on('webhook_error', msg => console.log(`[bot] webhook_error:`, msg))
+// telegramBot.on('error', msg => console.log(`[bot] error:`, msg))
+// telegramBot.on('polling_error', msg => console.log(`[bot] polling_error:`, msg))
+// telegramBot.on('webhook_error', msg => console.log(`[bot] webhook_error:`, msg))
 
 
 telegramBot.on('message', (msg) => {
