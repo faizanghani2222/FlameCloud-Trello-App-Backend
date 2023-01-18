@@ -6,7 +6,10 @@ const bodyParser=require("body-parser")
 const userRouter=require("./src/User/User.Router")
 const { addTask, deleteTask, addColumn, removeColumn, changeStatus } = require('./Components/Actions')
 require('dotenv').config();
-
+const Promise = require('bluebird');
+  Promise.config({
+    cancellation: true
+  });
 
 const app=express();
 
