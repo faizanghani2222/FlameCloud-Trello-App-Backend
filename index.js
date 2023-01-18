@@ -47,7 +47,7 @@ telegramBot.on('message', (msg) => {
         if(res.message==="success"){
             telegramBot.sendMessage(id, 'Removed Column Successfully');
            }else{
-            telegramBot.sendMessage(id, 'Failed to add task try again command-> /removeColumn Column-Name');
+            telegramBot.sendMessage(id, 'Failed to remove column try again command-> /removeColumn Column-Name');
            }
        })
 
