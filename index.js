@@ -23,6 +23,7 @@ const token=process.env.TOKEN
 const telegramBot = new TelegramBot(token, { polling: true })
 
 telegramBot.onText(/\/start/, (msg) => {
+     const id = msg.chat.id;
   telegramBot.sendMessage(id, "Welcome User, we are happy to assist you :) the  bot command for updating Trello Board are:- \n For adding new task --> /addTask Column-Name Task-Title \n For changing task status --> /changeTaskStatus Column-Name Task-Title \n For deleting a task --> /deleteTask Task-Title \n For Adding a column --> /addColumn Column-Name \n For deleting a column --> /removeColumn Column-Name");
 });
 
