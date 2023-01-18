@@ -6,11 +6,13 @@ const addColumn=async(id,query)=>{
         let t=await User.findOne({id:id})
         let col=t.columns
         let name=query[1]
-        if(!col.includes(name) && name!==" "){
+        if(!col.includes(name) && name){
             col.push(name)
+            let updated=await User.findOneAndUpdate({id:id},{columns:col})
+            return {message:"success"}
+        }else{
+            return {message:"error"}
         }
-        let updated=await User.findOneAndUpdate({id:id},{columns:col})
-        return {message:"success"}
     }catch(e){
         return {message:"error"}
     }
@@ -48,7 +50,7 @@ try{
     query.shift()
     query.shift()
     query=query.join(" ")
-   if(status!==null && status!==" " && query!==null && query!==" "){
+   if(status && query){
     if(!col.includes(status)){
         col.push(status)
     }
