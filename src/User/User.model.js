@@ -4,7 +4,7 @@ const userSchema=new mongoose.Schema({
     first_name:{type:String,required:true},
     last_name:{type:String},
     id:{type:Number,required:true},
-    tasks:{type:Array,default:[{title:"You can manage the board with @flamecloudTrelloBot from Telegram",status:"Todo"}]},
+    tasks:{type:Array,default:[]},
     columns:{type:Array,default:["Todo","In-Progress","Completed"]},
 })
 
